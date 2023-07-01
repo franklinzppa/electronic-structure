@@ -1,9 +1,9 @@
 #!/bin/sh
 NAME="k-cut-graphene"
 
-for K in 04 06 08 10 12 16 
+for KVAL in  06 09 12 18 24
 do
-cat > ${NAME}_${K}.in << EOF
+cat > ${NAME}_${KVAL}_.in << EOF
  &control
     calculation = 'scf',
     restart_mode = 'from_scratch',
@@ -18,9 +18,8 @@ cat > ${NAME}_${K}.in << EOF
     celldm(3) = 3.0,
     nat  = 2,
     ntyp = 1,
-    ecutwfc = 50,
-    ecutrho = 500,
-    nbnd = 8
+    ecutwfc = 40,
+    ecutrho = 400,
     occupations = 'smearing',
     smearing = 'gaussian',
     degauss = 0.01
@@ -38,11 +37,11 @@ ATOMIC_POSITIONS alat
    C    0.000000    0.5773503   0.000000
    
 K_POINTS automatic
-   $K $K 1  0 0 0
+   $KVAL $KVAL 1   0 0 0
 EOF
 
-pw.x < ${NAME}_${K}.in > ${NAME}_${K}.out
-echo ${NAME}_${K}
-grep ! ${NAME}_${K}.out
+pw.x < ${NAME}_${KVAL}_.in > ${NAME}_${KVAL}_.out
+echo ${NAME}_${KVAL}
+grep ! ${NAME}_${KVAL}_.out
 
 done

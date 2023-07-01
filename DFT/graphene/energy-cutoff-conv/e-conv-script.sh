@@ -3,7 +3,7 @@ NAME="e-cut-graphene"
 
 for CUTOFF in  10 15 20 25 30 35 40 45 50 60
 do
-cat > ${NAME}_${CUTOFF}.in << EOF
+cat > ${NAME}_${CUTOFF}_.in << EOF
  &control
     calculation = 'scf',
     restart_mode = 'from_scratch',
@@ -20,7 +20,6 @@ cat > ${NAME}_${CUTOFF}.in << EOF
     ntyp = 1,
     ecutwfc = $CUTOFF,
     ecutrho = $((CUTOFF * 10)),
-    nbnd = 8
     occupations = 'smearing',
     smearing = 'gaussian',
     degauss = 0.01
@@ -38,11 +37,11 @@ ATOMIC_POSITIONS alat
    C    0.000000    0.5773503   0.000000
    
 K_POINTS automatic
-   4 4 1   0 0 0
+   6 6 1   0 0 0
 EOF
 
-pw.x < ${NAME}_${CUTOFF}.in > ${NAME}_${CUTOFF}.out
+pw.x < ${NAME}_${CUTOFF}_.in > ${NAME}_${CUTOFF}_.out
 echo ${NAME}_${CUTOFF}
-grep ! ${NAME}_${CUTOFF}.out
+grep ! ${NAME}_${CUTOFF}_.out
 
 done

@@ -1,0 +1,1 @@
+grep "!" *.out | awk -F"[:_ ]+" '{print $2, $5}'
