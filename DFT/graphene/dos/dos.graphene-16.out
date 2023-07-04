@@ -1,0 +1,53 @@
+
+     Program DOS v.7.2 starts on  4Jul2023 at 12:26: 4 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     1276 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     ./tmp/graphene/graphene.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum         583     241     73                34703     8875    1555
+
+     Using Slab Decomposition
+
+
+     Check: negative core charge=   -0.000002
+
+     negative rho (up, down):  1.175E-06 0.000E+00
+
+     Optimized tetrahedron method used
+
+     [opt_tetra]  Optimized tetrahedron method is used.
+
+     DOS          :      4.22s CPU      4.25s WALL
+
+
+   This run was terminated on:  12:26: 8   4Jul2023            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
